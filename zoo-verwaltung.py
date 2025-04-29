@@ -6,7 +6,7 @@ class Tier:
 
     def __init__(self, name, bezeichnung):
         self.name = name
-        self.tierart = Art
+        self.tierart = Art(bezeichnung)
 
 class Pfleger:
 
@@ -15,7 +15,7 @@ class Pfleger:
         self.tiere = []
 
     def tier_hinzufuegen(self, tier: Tier):
-        self.tier.append(tier)
+        self.tiere.append(tier)
 
     def tiere_anzeigen(self):
         print(f"Die Teiere die dem Pfleger zugeteilt sind sind: {self.tiere}")
@@ -28,8 +28,8 @@ class Fuetterung:
         self.pfleger = pfleger
         self.tier = tier
 
-    def starten(self, name, bezeichnung):
-        print(f"Pfleger Horst füttert das Tier {name} (Art: {bezeichnung})")
+    def starten(self):
+        print(f"Pfleger {self.pfleger.name} füttert das Tier {self.tier.name} (Art: {self.tier.tierart.bezeichnung})")
         
 
 simba = Tier("Simba", "Löwe")
